@@ -43,11 +43,11 @@ if [ "$NAME" != "" ]
 then
 	if [ "$EXT" != "" ]
 	then
-		ls "$DIR" | grep -P "$NAME.*\.$EXT$" -m 1
-		MATCHED=($(ls "$DIR" | grep -P "$NAME.*\.$EXT$" -m 1))
+		ls "$DIR" | sort -r | grep -P "$NAME.*\.$EXT$" -m 1
+		MATCHED=($(ls "$DIR" | sort -r | grep -P "$NAME.*\.$EXT$" -m 1))
 	else
-		ls "$DIR" | grep -P "$NAME" -m 1
-		MATCHED=($(ls "$DIR" | grep -P "$NAME" -m 1))
+		ls "$DIR" | sort -r | grep -P "$NAME" -m 1
+		MATCHED=($(ls "$DIR" | sort -r | grep -P "$NAME" -m 1))
 	fi
 
 	if [ "$MATCHED" = "" ]
